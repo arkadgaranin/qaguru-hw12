@@ -4,12 +4,15 @@ import com.gmail.arkgaranin.pages.MainPage;
 import com.gmail.arkgaranin.pages.MyOnlinePage;
 import com.gmail.arkgaranin.pages.TariffsPage;
 import com.gmail.arkgaranin.pages.TrashPage;
+import io.qameta.allure.*;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.CollectionCondition.size;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 
+@Owner("Arkadiy Garanin")
 public class Tele2Tests extends TestBase {
 
   MainPage mainPage = new MainPage();
@@ -17,6 +20,9 @@ public class Tele2Tests extends TestBase {
   MyOnlinePage myOnlinePage = new MyOnlinePage();
   TrashPage trashPage = new TrashPage();
 
+  @Link(name = "Cтр-ца сайта tele2", url = "https://msk.tele2.ru")
+  @DisplayName("Покупка сим карты")
+  @Severity(SeverityLevel.NORMAL)
   @Test
   void purchaseSimCardTest() {
     mainPage
@@ -34,6 +40,9 @@ public class Tele2Tests extends TestBase {
     trashPage.сheckTariffIsOnTrashPage();
   }
 
+  @Link(name = "Cтр-ца сайта tele2", url = "https://msk.tele2.ru")
+  @DisplayName("Удаление купленной сим карты из корзины")
+  @Severity(SeverityLevel.NORMAL)
   @Test
   void deleteSimFromTrashTest() {
     mainPage
@@ -45,6 +54,9 @@ public class Tele2Tests extends TestBase {
         .сheckThatTrashIsEmpty();
   }
 
+  @Link(name = "Cтр-ца сайта tele2", url = "https://msk.tele2.ru")
+  @DisplayName("Поиск свободного номера телефона")
+  @Severity(SeverityLevel.NORMAL)
   @Test
   void searchForFreeNumberTest() {
     mainPage
@@ -61,6 +73,9 @@ public class Tele2Tests extends TestBase {
     $("div.catalog-numbers").shouldHave(text("901 369-68-77"));
   }
 
+  @Link(name = "Cтр-ца сайта tele2", url = "https://msk.tele2.ru")
+  @DisplayName("Поиск смартфона, используя фильтры")
+  @Severity(SeverityLevel.NORMAL)
   @Test
   void searchSmartphonesByFiltersTest() {
     mainPage
