@@ -69,7 +69,7 @@ public class Tele2Tests extends TestBase {
 
     $("a.reset-filters").click();
     $("div > a.short-info").shouldHave(text("Показать еще"));
-    $("#searchNumber").setValue("977 251-66-71");
+    $("#searchNumber").setValue("9772516671");
     $("div.catalog-numbers").shouldHave(text("977 251-66-71"));
   }
 
