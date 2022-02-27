@@ -37,3 +37,6 @@ target/
 .vscode
 /gradlew
 /gradlew.bat
+
+# Directory notifications
+notifications/telegram_config.json
