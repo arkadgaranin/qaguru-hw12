@@ -69,8 +69,8 @@ public class Tele2Tests extends TestBase {
 
     $("a.reset-filters").click();
     $("div > a.short-info").shouldHave(text("Показать еще"));
-    $("#searchNumber").setValue("901 369-68-77");
-    $("div.catalog-numbers").shouldHave(text("901 369-68-77"));
+    $("#searchNumber").setValue("977 251-66-71");
+    $("div.catalog-numbers").shouldHave(text("977 251-66-71"));
   }
 
   @Link(name = "Cтр-ца сайта tele2", url = "https://msk.tele2.ru")
