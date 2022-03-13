@@ -7,6 +7,8 @@ import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
+import static com.codeborne.selenide.Selenide.closeWebDriver;
+
 public class TestBase {
 
   @BeforeAll
@@ -15,7 +17,6 @@ public class TestBase {
     options.addArguments("--disable-notifications");
     Configuration.browserCapabilities = options;
     Configuration.baseUrl = "https://msk.tele2.ru";
-    Configuration.browserSize = "1920x1080";
 
     String login = System.getProperty("login");
     String password = System.getProperty("password");
@@ -38,5 +39,6 @@ public class TestBase {
     Attachments.takePageSource();
     Attachments.addVideo();
     Attachments.browserConsoleLogs();
+    closeWebDriver();
   }
 }
